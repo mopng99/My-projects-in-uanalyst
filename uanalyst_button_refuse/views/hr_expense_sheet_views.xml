@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="adding_button_to_expense_sheet_form_view" model="ir.ui.view">
+            <field name="name">adding button</field>
+            <field name="model">hr.expense.sheet</field>
+            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//sheet//notebook//page[1]//field[@name='expense_line_ids']//tree//field[@name='is_refused']"
+                       position="after">
+                    <button name="refuse_expense" string="REFUSE" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'reported')]}"/>
+                </xpath>
+                <button name="reset_expense_sheets" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', '=', 'cancel')]}</attribute>
+                </button>
+            </field>
+        </record>
+    </data>
+</odoo>

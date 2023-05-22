@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="adding_attribute_hr_work_entry_form_view" model="ir.ui.view">
+        <field name="name">adding.attribute</field>
+        <field name="model">hr.work.entry.regeneration.wizard</field>
+        <field name="inherit_id" ref="hr_work_entry_contract.hr_work_entry_regeneration_wizard"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="replace">
+                <field name="employee_id" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

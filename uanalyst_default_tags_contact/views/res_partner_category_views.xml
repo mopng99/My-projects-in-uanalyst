@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="res_partner_category_form_view" model="ir.ui.view">
+        <field name="name">Res Partner Category</field>
+        <field name="model">res.partner.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="default_tag"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_category_action_server" model="ir.actions.server">
+        <field name="name">Res Partner Category</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="uanalyst_default_tags_contact.model_res_partner_category"/>
+        <field name="binding_model_id" ref="uanalyst_default_tags_contact.model_res_partner_category"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'res_id': 1,
+            'res_model': 'res.partner.category',
+            'views': [(env.ref('uanalyst_default_tags_contact.res_partner_category_form_view').id, 'form')],
+            'view_type': 'form',
+            }
+        </field>
+    </record>
+
+    <menuitem name="Tags Category"
+              id="hr_employee_category_menu"
+              parent="contacts.menu_partner_category_form"
+              action="res_partner_category_action_server"
+              sequence="10"/>
+</odoo>

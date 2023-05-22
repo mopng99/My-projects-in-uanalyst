@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="uanalyst_group_no_create_new_product" model="res.groups">
+        <field name="name">product No Creation</field>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="uanalyst_group_no_create_new_partner" model="res.groups">
+        <field name="name">partner No Creation</field>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <!--    <record id="access_creation" model="ir.module.category">-->
+    <!--        <field name="name">Access Creation</field>-->
+    <!--        <field name="description">Access Creation For modules</field>-->
+    <!--    </record>-->
+
+    <!--    <record id="group_admin" model="res.groups">-->
+    <!--        <field name="name">Admin</field>-->
+    <!--        <field name="category_id" ref="uanalyst_groups_nocreate.access_creation"/>-->
+    <!--    </record>-->
+
+    <!--    <record id="group_user" model="res.groups">-->
+    <!--        <field name="name">User</field>-->
+    <!--        <field name="category_id" ref="uanalyst_groups_nocreate.access_creation"/>-->
+    <!--    </record>-->
+
+</odoo>
+
